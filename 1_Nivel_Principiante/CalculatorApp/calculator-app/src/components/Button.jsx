@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../css/Button.module.css";
 
-const Button = ({ color, value, dato }) => {
+const Button = ({ color, value, dato, agregarInput }) => {
   let btnColor = "";
   switch (color) {
     case "w":
@@ -21,7 +21,7 @@ const Button = ({ color, value, dato }) => {
     <div className={styles.containerBtn}>
       <button
         className={`${styles.btn} ${btnColor}`}
-        onClick={() => console.log(value)}
+        onClick={() => agregarInput(value)}
       >
         {dato}
       </button>

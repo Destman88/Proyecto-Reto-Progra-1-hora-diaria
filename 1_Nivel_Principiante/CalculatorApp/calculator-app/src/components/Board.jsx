@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import styles from "../css/Board.module.css";
+import { evaluate } from "mathjs";
 
-const Board = () => {
+const Board = ({ setInputValue }) => {
+  const [input, setInput] = useState("");
+
+  const agregarInput = (val) => {
+    setInput(input + val);
+  };
+
+  const handleEquals = () => {
+    const result = evaluate(input);
+    setInputValue(result);
+  };
+
   const datos = [
     { color: "g", value: "AC", dato: "AC" },
     { color: "g", value: "-", dato: "+/-" },
@@ -28,7 +40,14 @@ const Board = () => {
   return (
     <div className={styles.board}>
       {datos.map((e, i) => (
-        <Button key={i} color={e.color} value={e.value} dato={e.dato} />
+        <Button
+          key={i}
+          color={e.color}
+          value={e.value}
+          dato={e.dato}
+          agregarInput={agregarInput}
+          handleEquals={handleEquals}
+        />
       ))}
     </div>
   );
