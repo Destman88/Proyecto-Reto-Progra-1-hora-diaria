@@ -11,6 +11,7 @@
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: 'Graduate', Arial, sans-serif, monospace;
 }
 
 /* Sections
@@ -105,7 +106,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: Arial, Helvetica, sans-serif, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
